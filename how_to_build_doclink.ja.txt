@@ -1,0 +1,51 @@
+(1) cygwin をインストールする。以下の追加パッケージが必要です。
+
+    flex
+    bison
+
+(2) 環境変数 CYGWINDIR をインストールしたフォルダにセットします。
+    例 CYGWINDIR=C:\cygwin64
+
+(3) doclink_src.tar.bz2 をダウンロードする。
+
+(4) 解凍する。
+
+   % bunzip2 -c doclink_src.tar.bz2 | tar xf -
+
+(5) 39_docgen/doclink というフォルダが作成されるのでそこにある doclink.sln を
+    Visual Studio 2017 で開いてあとは通常通りビルドします。
+
+   (*) Windows SDK のバージョンに関するエラーが出た場合は、エラーメッセージの通り
+      [ソリューションの再ターゲット] を選択することでエラーを回避できます。
+    
+(6) 簡単な動作確認は以下のようにします。
+
+    % cat sample.txt
+    #define FOO(a, b, c)  ((a) | (b) || (c))
+
+    int f()
+    {
+      return FOO(1, 2, 3);
+    }
+    % cat sample.j
+    $macro $def FOO "sample.txt" 1 ;
+    $macro $ref FOO "sample.txt" 5 ;
+    % cat sample.x
+    $func $def f "sample.txt" 3
+    {
+        $graph {
+            0 "sample.txt" 5;
+        }
+    }
+    % x64/Debug/doclink.exe -o output.txt sample.j sample.x
+    % cat output.txt
+    \chapter{Macro}
+    ... 省略
+    %
+
+(7) g++ でビルドする場合
+
+    % cd 39_docgen/doclink
+    % make
+
+    とすることでビルドできます。

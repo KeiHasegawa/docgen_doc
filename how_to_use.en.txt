@@ -1,0 +1,67 @@
+(1) Build hcpp
+
+    Top -> C/C++ Preprocessor -> How to build hcpp
+
+    We assume that C:\10_hcpp\src\x64\Debug\hcpp.exe is made as a result.
+
+(2) Build hcc1
+
+    Top -> C Compiler -> How to build hcc1 
+
+(3) Build docgen.dll
+
+    Top -> Document generator -> How to build docgen.dll
+
+(4) Build doclink
+
+    Top -> Document generator -> How to build doclink
+
+(5) Install W32TeX. We assume that it installed at C:\w32tex.
+
+(6) Create sample source.
+
+    % cat a.c
+    #include <stdio.h>
+
+    int main()
+    {
+      printf("hello world\n");
+      return 0;
+    }
+    %
+
+(7) Execute hcpp like bellow:
+    % C:/10_hcpp/x64/Debug/hcpp.exe -o a.i -L a.j a.c -IC:/cygwin64/usr/include -IC:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int" -D__declspec\(a\)= -D__cdecl= -D__inline__=inline -D__extension__= -D__attribute__\(a\)= -D__builtin_va_list='char*' -D__builtin_stdarg_start=__builtin_va_start -D__asm__=asm -W 0 -H
+
+    As a result, `a.i' and `a.j' will be generated.
+    
+    -IC:/cygwin64/usr/include
+    -IC:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include
+
+    should be chaged suitably according to your envieronment.
+    If it's necessary, please reference to
+
+    Top -> C/C++ Preprocessor -> hcpp command line
+
+(8) Compile with hcc1, docgen.dll
+    % C:/20_hcc1/src/x64/Debug/hcc1.exe --generator C:/39_docgen/src/x64/Debug/docgen.dll -o a.x a.i
+
+    As a result, `a.x' is generated.
+
+(9) Generate tex source with doclink.
+
+    % C:/39_docgen/doclink/x64/Debug/doclink.exe -o a.tex a.j a.x --exclude-dir C:/cygwin64/usr/include --exclude-dir C:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include
+
+(10) Compile with platex and view with dviout.
+
+    % cat doc.tex
+    \documentclass{report}
+
+    \begin{document}
+
+    \input{a.tex}
+  
+    \end{document}
+    % C:/w32tex/bin/platex.exe doc.tex
+    ... (omitted)
+    % C:/w32tex/dviout/dviout.exe doc.dvi

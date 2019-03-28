@@ -1,0 +1,47 @@
+(1) hcpp document generation (whole)
+(2) hcpp document generation (part)
+
+(1) hcpp document generation (whole)
+
+   % cd C:/10_hcpp/src
+   % make 'HCPP=C:/10_hcpp/src/hcpp.exe' 'HCC1=C:/20_hcc1/src/hcc1.exe' 'DOCGEN_DLL=C:/39_docgen/src/docgen.dll' -f Makefile.hcc -n
+   ...(omitted)
+   %
+
+   Above command shows the way of generating doc.dvi. However, please set
+   macro variable of make or modify Makefile.hcc suitably.
+
+   Unfortunately, Visual Studio Debug version hcc1.exe and docgen.dll
+   take long time for generating .x file. Please try gcc version or
+   Visual Studio Release version.
+
+   % make -f Makefile.hcc
+   ...
+   % C:/w32tex/dviout.exe doc.dvi &
+
+(2) hcpp document generation (part)
+
+   % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include
+
+   This command generates document just about directive.c.
+
+   % platex doc.tex
+
+   Again please TeX-compile and confirm that the amount of document
+   becomes less than previous document.
+
+   % doclink.exe -h
+   ...
+
+   This shows doclink options. If you want to generate variables or
+   function for just declaration but no definition in a part document,
+   please use `--output-nodef' option.
+
+   % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include --output-nodef
+
+   You can generate function flow graph:
+
+   % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include --output-nodef --output-flow
+
+   Unfortunately, function flow graph is hard to understand for human.
+   

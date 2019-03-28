@@ -1,0 +1,46 @@
+(1) hcpp 全体のドキュメント生成
+(2) hcpp 一部のドキュメント生成
+
+(1) hcpp 全体のドキュメント生成
+
+   % cd C:/10_hcpp/src
+   % make 'HCPP=C:/10_hcpp/src/hcpp.exe' 'HCC1=C:/20_hcc1/src/hcc1.exe' 'DOCGEN_DLL=C:/39_docgen/src/docgen.dll' -f Makefile.hcc -n
+   ...(省略)
+   %
+
+   上のコマンドで doc.dvi の生成方法を表示できます。但し make のマクロ変数を
+   適切に設定するか、Makefile.hcc を適切に変更してください。
+
+   残念ながら、Visual Studio Debug 版の hcc1.exe と docgen.dll では
+   .x ファイルの生成に長時間を必要とするかもしれまんせん。回避策として、
+   gcc 版や Visual Studio Release 版の hcc1.exe と docgen.dll で試して
+   みてください。
+
+   % make -f Makefile.hcc
+   ...
+   % C:/w32tex/dviout.exe doc.dvi &
+   
+(2) hcpp 一部のドキュメント生成
+
+   % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include
+
+   とすれば directive.c についてのドキュメントを生成することになります。
+  
+   % platex doc.tex
+
+   上のコマンドでもう一度 TeX コンパイルして dviout.exe の表示内容を比較して
+   みましょう。 ドキュメントの量が減っていることを確認できるでしょう。
+
+   % doclink.exe -h
+   ...
+
+   doclink のオプションを表示します。一部のドキュメントで定義のない宣言に対しても
+   ドキュメントを生成するには --output-nodef オプションを使用します。
+
+   % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include --output-nodef
+
+   函数の流れグラフも生成してみます。
+
+   % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include --output-nodef --output-flow
+
+   残念ですが、流れグラフは人が見て理解するには無理があるようです。

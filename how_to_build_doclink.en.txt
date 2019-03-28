@@ -1,0 +1,49 @@
+(1) Install Cygwin. Add to bellow package.
+
+    flex
+    bison
+
+(2) Set environment variable `CYGWINDIR' to the install folder.
+    Ex: CYGWINDIR=C:\cygwin64
+
+(3) Download doclink_src.tar.bz2
+
+(4) Extract it
+
+   % bunzip2 -c doclink_src.tar.bz2 | tar xf -
+
+(5) Open 39_docgen/doclink/doclink.sln with Visual Studio 2017 and build
+    as usual.
+
+   (*) If the error about Windows SDK version occurs, please do as
+       error message approach, i.e. select [solution re-target].
+    
+(6) Simple comfirmation
+
+    % cat sample.txt
+    #define FOO(a, b, c)  ((a) | (b) || (c))
+
+    int f()
+    {
+      return FOO(1, 2, 3);
+    }
+    % cat sample.j
+    $macro $def FOO "sample.txt" 1 ;
+    $macro $ref FOO "sample.txt" 5 ;
+    % cat sample.x
+    $func $def f "sample.txt" 3
+    {
+        $graph {
+            0 "sample.txt" 5;
+        }
+    }
+    % x64/Debug/doclink.exe -o output.txt sample.j sample.x
+    % cat output.txt
+    \chapter{Macro}
+    ... (omitted)
+    %
+
+(7) Build with g++:
+
+    % cd 39_docgen/doclink
+    % make
