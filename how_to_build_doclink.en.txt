@@ -12,7 +12,7 @@
 
    % bunzip2 -c doclink_src.tar.bz2 | tar xf -
 
-(5) Open 39_docgen/doclink/doclink.sln with Visual Studio 2017 and build
+(5) Open 39_docgen/doclink/doclink.sln with Visual Studio and build
     as usual.
 
    (*) If the error about Windows SDK version occurs, please do as
