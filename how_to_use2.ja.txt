@@ -18,7 +18,7 @@
 
    % make -f Makefile.hcc
    ...
-   % C:/w32tex/dviout.exe doc.dvi &
+   % C:/w32tex/dviout/dviout.exe doc.dvi &
    
 (2) hcpp ˆê•”‚ÌƒhƒLƒ…ƒƒ“ƒg¶¬
 
