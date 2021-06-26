@@ -1,26 +1,26 @@
-(1) hcpp ‚ğg‚¦‚é‚æ‚¤‚É‚µ‚Ü‚·B
+(1) hcpp ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã—ã¾ã™ã€‚
 
-    ƒgƒbƒv -> C/C++ ƒvƒŠƒvƒƒZƒbƒT -> hcpp ƒrƒ‹ƒh•û–@
+    ãƒˆãƒƒãƒ— -> C/C++ ãƒ—ãƒªãƒ—ãƒ­ã‚»ãƒƒã‚µ -> hcpp ãƒ“ãƒ«ãƒ‰æ–¹æ³•
 
-    ‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢BˆÈ‰º C:\10_hcpp\src\x64\Debug\hcpp.exe ‚ªƒrƒ‹ƒh‚³‚ê‚½‚Æ
-    ‰¼’è‚µ‚Äà–¾‚µ‚Ü‚·B
+    ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚ä»¥ä¸‹ C:\10_hcpp\src\x64\Debug\hcpp.exe ãŒãƒ“ãƒ«ãƒ‰ã•ã‚ŒãŸã¨
+    ä»®å®šã—ã¦èª¬æ˜ã—ã¾ã™ã€‚
 
-(2) hcc1 ‚ğg‚¦‚é‚æ‚¤‚É‚µ‚Ü‚·B
+(2) hcc1 ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã—ã¾ã™ã€‚
 
-    ƒgƒbƒv -> CƒRƒ“ƒpƒCƒ‰ -> hcc1 ƒrƒ‹ƒh•û–@
+    ãƒˆãƒƒãƒ— -> Cã‚³ãƒ³ãƒ‘ã‚¤ãƒ© -> hcc1 ãƒ“ãƒ«ãƒ‰æ–¹æ³•
 
-(3) docgen.dll ‚ğg‚¦‚é‚æ‚¤‚É‚µ‚Ü‚·B
+(3) docgen.dll ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã—ã¾ã™ã€‚
 
-    ƒgƒbƒv -> ƒhƒLƒ…ƒƒ“ƒgƒWƒFƒlƒŒ[ƒ^ -> docgen.dll ‚Ìƒrƒ‹ƒh•û–@
+    ãƒˆãƒƒãƒ— -> ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚¸ã‚§ãƒãƒ¬ãƒ¼ã‚¿ -> docgen.dll ã®ãƒ“ãƒ«ãƒ‰æ–¹æ³•
 
-(4) doclink ‚ğg‚¦‚é‚æ‚¤‚É‚µ‚Ü‚·B
+(4) doclink ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã—ã¾ã™ã€‚
 
-    ƒgƒbƒv -> ƒhƒLƒ…ƒƒ“ƒgƒWƒFƒlƒŒ[ƒ^ -> doclink ‚Ìƒrƒ‹ƒh•û–@
+    ãƒˆãƒƒãƒ— -> ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚¸ã‚§ãƒãƒ¬ãƒ¼ã‚¿ -> doclink ã®ãƒ“ãƒ«ãƒ‰æ–¹æ³•
 
-(5) W32TeX‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·BˆÈ‰º C:\w32tex ‚ÉƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚½‚Æ‰¼’è‚µ‚Äà–¾‚µ
-    ‚Ü‚·B
+(5) W32TeXã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¾ã™ã€‚ä»¥ä¸‹ C:\w32tex ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚ŒãŸã¨ä»®å®šã—ã¦èª¬æ˜ã—
+    ã¾ã™ã€‚
 
-(6) ƒTƒ“ƒvƒ‹ƒ\[ƒX‚ğì¬‚µ‚Ü‚·B
+(6) ã‚µãƒ³ãƒ—ãƒ«ã‚½ãƒ¼ã‚¹ã‚’ä½œæˆã—ã¾ã™ã€‚
     % cat a.c
     #include <stdio.h>
 
@@ -31,30 +31,30 @@
     }
     %
 
-(7) hcpp ‚ÅƒvƒŠƒvƒƒZƒX‚µ‚Ü‚·B
+(7) hcpp ã§ãƒ—ãƒªãƒ—ãƒ­ã‚»ã‚¹ã—ã¾ã™ã€‚
     % C:/10_hcpp/x64/Debug/hcpp.exe -o a.i -L a.j a.c -IC:/cygwin64/usr/include -IC:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int" -D__declspec\(a\)= -D__cdecl= -D__inline__=inline -D__extension__= -D__attribute__\(a\)= -D__builtin_va_list='char*' -D__builtin_stdarg_start=__builtin_va_start -D__asm__=asm -W 0 -H
 
-    ‚±‚ê‚É‚æ‚è a.i ‚Æ a.j ‚ªì¬‚³‚ê‚Ü‚·B
+    ã“ã‚Œã«ã‚ˆã‚Š a.i ã¨ a.j ãŒä½œæˆã•ã‚Œã¾ã™ã€‚
 
     -IC:/cygwin64/usr/include
     -IC:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include
 
-    ‚ÍŠÂ‹«‚É‡‚í‚¹‚Ä•ÏX‚µ‚Ä‚­‚¾‚³‚¢B•K—v‚Å‚ ‚ê‚Î
+    ã¯ç’°å¢ƒã«åˆã‚ã›ã¦å¤‰æ›´ã—ã¦ãã ã•ã„ã€‚å¿…è¦ã§ã‚ã‚Œã°
 
-    ƒgƒbƒv -> C/C++ ƒvƒŠƒvƒƒZƒbƒT -> hcpp ‚ÌƒRƒ}ƒ“ƒhƒ‰ƒCƒ“
+    ãƒˆãƒƒãƒ— -> C/C++ ãƒ—ãƒªãƒ—ãƒ­ã‚»ãƒƒã‚µ -> hcpp ã®ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³
 
-    ‚àQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+    ã‚‚å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-(8) hcc1, docgen.dll ‚ÅƒRƒ“ƒpƒCƒ‹‚µ‚Ü‚·B
+(8) hcc1, docgen.dll ã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ã¾ã™ã€‚
     % C:/20_hcc1/src/x64/Debug/hcc1.exe --generator C:/39_docgen/src/x64/Debug/docgen.dll -o a.x a.i
 
-    ‚±‚ê‚É‚æ‚è a.x ‚ªì¬‚³‚ê‚Ü‚·B
+    ã“ã‚Œã«ã‚ˆã‚Š a.x ãŒä½œæˆã•ã‚Œã¾ã™ã€‚
 
-(9) doclink ‚Å a.tex ‚ğì¬‚µ‚Ü‚·B
+(9) doclink ã§ a.tex ã‚’ä½œæˆã—ã¾ã™ã€‚
 
     % C:/39_docgen/doclink/x64/Debug/doclink.exe -o a.tex a.j a.x --exclude-dir C:/cygwin64/usr/include --exclude-dir C:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include
 
-(10) TeX ƒRƒ“ƒpƒCƒ‹‚µ‚ÄAƒhƒLƒ…ƒƒ“ƒg‚ğ•\¦‚µ‚Ü‚·B
+(10) TeX ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ã¦ã€ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’è¡¨ç¤ºã—ã¾ã™ã€‚
     % cat doc.tex
     \documentclass{jreport}
 
@@ -64,5 +64,5 @@
   
     \end{document}
     % C:/w32tex/bin/platex.exe doc.tex
-    ... (È—ª)
+    ... (çœç•¥)
     % C:/w32tex/dviout/dviout.exe doc.dvi

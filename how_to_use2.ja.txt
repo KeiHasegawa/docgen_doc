@@ -1,46 +1,46 @@
-(1) hcpp �S�̂̃h�L�������g����
-(2) hcpp �ꕔ�̃h�L�������g����
+(1) hcpp 全体のドキュメント生成
+(2) hcpp 一部のドキュメント生成
 
-(1) hcpp �S�̂̃h�L�������g����
+(1) hcpp 全体のドキュメント生成
 
    % cd C:/10_hcpp/src
    % make 'HCPP=C:/10_hcpp/src/hcpp.exe' 'HCC1=C:/20_hcc1/src/hcc1.exe' 'DOCGEN_DLL=C:/39_docgen/src/docgen.dll' -f Makefile.hcc -n
-   ...(�ȗ�)
+   ...(省略)
    %
 
-   ��̃R�}���h�� doc.dvi �̐������@��\���ł��܂��B�A�� make �̃}�N���ϐ���
-   �K�؂ɐݒ肷�邩�AMakefile.hcc ��K�؂ɕύX���Ă��������B
+   上のコマンドで doc.dvi の生成方法を表示できます。但し make のマクロ変数を
+   適切に設定するか、Makefile.hcc を適切に変更してください。
 
-   �c�O�Ȃ���AVisual Studio Debug �ł� hcc1.exe �� docgen.dll �ł�
-   .x �t�@�C���̐����ɒ����Ԃ�K�v�Ƃ��邩������܂񂹂�B�����Ƃ��āA
-   gcc �ł� Visual Studio Release �ł� hcc1.exe �� docgen.dll �Ŏ�����
-   �݂Ă��������B
+   残念ながら、Visual Studio Debug 版の hcc1.exe と docgen.dll では
+   .x ファイルの生成に長時間を必要とするかもしれまんせん。回避策として、
+   gcc 版や Visual Studio Release 版の hcc1.exe と docgen.dll で試して
+   みてください。
 
    % make -f Makefile.hcc
    ...
    % C:/w32tex/dviout/dviout.exe doc.dvi &
    
-(2) hcpp �ꕔ�̃h�L�������g����
+(2) hcpp 一部のドキュメント生成
 
    % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include
 
-   �Ƃ���� directive.c �ɂ��Ẵh�L�������g�𐶐����邱�ƂɂȂ�܂��B
+   とすれば directive.c についてのドキュメントを生成することになります。
   
    % platex doc.tex
 
-   ��̃R�}���h�ł�����x TeX �R���p�C������ dviout.exe �̕\�����e���r����
-   �݂܂��傤�B �h�L�������g�̗ʂ������Ă��邱�Ƃ��m�F�ł���ł��傤�B
+   上のコマンドでもう一度 TeX コンパイルして dviout.exe の表示内容を比較して
+   みましょう。 ドキュメントの量が減っていることを確認できるでしょう。
 
    % doclink.exe -h
    ...
 
-   doclink �̃I�v�V������\�����܂��B�ꕔ�̃h�L�������g�Œ�`�̂Ȃ��錾�ɑ΂��Ă�
-   �h�L�������g�𐶐�����ɂ� --output-nodef �I�v�V�������g�p���܂��B
+   doclink のオプションを表示します。一部のドキュメントで定義のない宣言に対しても
+   ドキュメントを生成するには --output-nodef オプションを使用します。
 
    % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include --output-nodef
 
-   �����̗���O���t���������Ă݂܂��B
+   函数の流れグラフも生成してみます。
 
    % doclink.exe -o hcpp.tex directive.j directive.x --exclude-dir /usr/include --exclude-dir /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include --output-nodef --output-flow
 
-   �c�O�ł����A����O���t�͐l�����ė�������ɂ͖���������悤�ł��B
+   残念ですが、流れグラフは人が見て理解するには無理があるようです。

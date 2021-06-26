@@ -1,16 +1,16 @@
-(1) ���ϐ� HCC1_SRCDIR �� hcc1 �� src �f�B���N�g�����w�肵�܂��B
-    ��: HCC1_SRCDIR=C:/User/hasegawa/20_hcc1/src
+(1) 環境変数 HCC1_SRCDIR に hcc1 の src ディレクトリを指定します。
+    例: HCC1_SRCDIR=C:/User/hasegawa/20_hcc1/src
 
-(2) docgen.dll �̃\�[�X���_�E�����[�h����B
+(2) docgen.dll のソースをダウンロードする。
 
-(3) �ȉ��̂悤�ɂ��ĉ𓀂���B
+(3) 以下のようにして解凍する。
 
     % bunzip2 -c docgen_src.tar.bz2 | tar xf -
 
-(4) 39_docgen/src �f�B���N�g���ɂ��� docgen.sln �� Visual Studio �ŊJ����
-    �ʏ�ʂ�r���h����B
+(4) 39_docgen/src ディレクトリにある docgen.sln を Visual Studio で開いて
+    通常通りビルドする。
 
-(5) ����m�F
+(5) 動作確認
 
     % cat sample.txt
     int x;
@@ -32,4 +32,3 @@
         }
     }
     %
-    
